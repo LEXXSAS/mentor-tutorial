@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 function App() {
 
   return (
     <div className="App">
-      
+      <h1>Урок №1</h1>
     </div>
   );
 }
