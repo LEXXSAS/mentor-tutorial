@@ -44,7 +44,6 @@ function App() {
       <Profile name="Вася" registredAt={new Date(2021, 5, 22)} >Привет,</Profile>
       <br />
       <Profile2 name="Петр" registredAt={new Date(2022, 4, 20)} >Привет,</Profile2>
-      {/* <Profile name="Isaak" registredAt={new Date(2022, 4, 22)} /> */}
     </div>
   );
 }

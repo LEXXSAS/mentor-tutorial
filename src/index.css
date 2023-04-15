@@ -6,10 +6,3 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-.box {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px 20px;
-    width: max-content;
-}
