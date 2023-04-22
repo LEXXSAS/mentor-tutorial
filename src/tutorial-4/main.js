@@ -37,3 +37,29 @@ function showTodo(array) {
        
     })
 }
+
+// способ 2 с функцией render, но без добавления элементов
+/* 
+const names = ["John", "Petr", "Alexey"];
+
+function render(names) {
+  let list = "";
+  names.forEach((el, ind) => {
+    list += `
+    <li>${el}
+    <button onclick='removeItem(event, ${ind})'>X</button>
+	</li>
+    `;
+    let ul = document.querySelector(".todo");
+    ul.innerHTML = list;
+  });
+}
+window.onload = render(names);
+
+
+function removeItem(event, ind) {
+  names.splice(ind, 1);
+  event.target.parentElement.remove()
+  render(names)
+}
+*/
