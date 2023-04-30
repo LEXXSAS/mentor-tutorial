@@ -6,7 +6,6 @@ import Comments from './components/Comments';
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 
-
 function App() {
     let example = { 
         fullName: "Иван Васильевич",

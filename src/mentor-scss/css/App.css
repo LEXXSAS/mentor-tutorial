@@ -1,0 +1,15 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 10%;
+}
+
+.redButton {
+  background: red;
+  color: #fff;
+  border: 0;
+}

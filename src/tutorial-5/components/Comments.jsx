@@ -4,12 +4,14 @@ import Typography from '@mui/material/Typography'
 import { Avatar, Button, Divider, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
 import avatarOne from '../images/ninja.png'
 import avatarTwo from '../images/woman5.png'
+import FlipMove from 'react-flip-move';
 
 function Comments() {
     const {comments, removeComment} = React.useContext(AppContext);
     return (
-        <div style={{maxHeight: '350px', overflowY: 'auto', padding: '5px', scrollbarGutter: 'auto', scrollBehavior: 'smooth'}}>
-            
+        <div>
+        {/* // <div style={{maxHeight: '350px', overflowY: 'auto', padding: '5px', scrollbarGutter: 'auto', scrollBehavior: 'smooth'}}> */}
+            <FlipMove  duration={250} easing="ease-in-out" leaveAnimation="none">
         {/* <div> */}
             {comments.map((comment, index) => {
                 return (
@@ -45,8 +47,10 @@ function Comments() {
                         </ListItem>
                         {/* <Divider variant="inset" component="li" /> */}
                     </List>
+                    
                 )
             })}
+            </FlipMove>
         </div>
     );
 }
