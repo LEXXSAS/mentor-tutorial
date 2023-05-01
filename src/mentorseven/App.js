@@ -4,8 +4,10 @@ import {Button, Nav, Navbar, NavDropdown, Container} from 'react-bootstrap';
 import {Home} from './pages/Home'
 import Header from './components/Header';
 import About from './pages/About';
+import NotFound from './pages/NotFound';
 import Fullpost from './pages/Fullpost';
 import { AppContext } from './components/context';
+import { Routes, Route, Link } from 'react-router-dom';
 
 
 function App() {
@@ -33,7 +35,7 @@ function App() {
             "https://images.unsplash.com/photo-1562890216-35a12862e560?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=250&ixid=MnwxfDB8MXxyYW5kb218MHx8Mnx8fHx8fDE2NDQzNjQ0MzU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=460",
           title: "Статья 3",
           text:
-            "авным образом новая модель организационной деятельности требуют определения и уточнения модели развития. Не следует, однако забывать, что новая модель организационной деятельности играет важную роль в формировании новых предложений."
+            "Равным образом новая модель организационной деятельности требуют определения и уточнения модели развития. Не следует, однако забывать, что новая модель организационной деятельности играет важную роль в формировании новых предложений."
         },
         {
           id: 4,
@@ -45,16 +47,26 @@ function App() {
         }
       ];
 
-    const pathname = window.location.pathname;
+      const [showButton, setShowButton] = useState(false);
 
-    function toSaleId(u) {
-        // var id = parseInt(u.split('/post/')[1], 10);
-        // if (!isNaN(id)) return id;
-        let id = u.split('/post/')[1]
-        return id
-    }
+      useEffect(() => {
+        window.addEventListener("scroll", () => {
+          if (window.pageYOffset > 250) {
+            setShowButton(true);
+          } else {
+            setShowButton(false);
+          }
+        });
+      }, []);
 
-    let id = toSaleId(pathname);
+      const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      };
+
+    // let id = window.location.pathname.split('/post/')[1]
     
     return (
         <AppContext.Provider value={{posts}} >
@@ -67,14 +79,14 @@ function App() {
         </div>
 
         <div className='container'>
-            {(pathname === '/') && <Home />}
-            {(pathname === '/about') && <About />}
-            {(pathname === '/login') && <h2>Логин</h2>}
 
-            {/* {posts.map((post, index) => (
-                <Fullpost key={post.id} id={post.id} />
-            ))} */}
-            {(pathname === `/post/${id}`) && <Fullpost id={id} />}
+          <Routes>
+            <Route path='*' element={<NotFound />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/login' element={<div style={{padding: '0 1.5rem'}}><h2>Логин</h2></div>} />
+            <Route path='/post/:id' element={<Fullpost />} />
+          </Routes>
 
         </div>
 
@@ -94,6 +106,11 @@ function App() {
         </div>
         </footer>
         
+
+        {showButton && (
+        <div onClick={scrollToTop} className="upclick">&#9650;</div>
+        )}
+
         </div>
         </AppContext.Provider>
     )

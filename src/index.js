@@ -5,6 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import './tutorial-4-gen-phrases/App.css'
 import './index.css'
+
+
+import { BrowserRouter } from "react-router-dom";
 // import './mentorseven/index.css'
 // import './style.css'
 // import App from './App';
@@ -25,5 +28,9 @@ import App from './mentorseven/App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <React.StrictMode>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </React.StrictMode>
 );
