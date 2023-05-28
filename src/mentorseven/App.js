@@ -1,13 +1,19 @@
 import React from 'react'
-import { useState, useEffect, useContext } from 'react';
-import {Button, Nav, Navbar, NavDropdown, Container} from 'react-bootstrap';
+import { useState, useEffect} from 'react';
 import {Home} from './pages/Home'
 import Header from './components/Header';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Fullpost from './pages/Fullpost';
+import Footer from './pages/Footer';
+import Layout from './components/Layout';
 import { AppContext } from './components/context';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
+import Profiletest from './pages/Profiletest';
+
+
 
 
 function App() {
@@ -72,40 +78,28 @@ function App() {
         <AppContext.Provider value={{posts}} >
         <div className='d-flex flex-column min-vh-100'>
 
-        <div style={{padding: '0 1.5rem'}}>
-            <div className='container'>
+
             <Header />
-            </div>
-        </div>
+
 
         <div className='container'>
 
           <Routes>
-            <Route path='*' element={<NotFound />} />
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/login' element={<div style={{padding: '0 1.5rem'}}><h2>Логин</h2></div>} />
-            <Route path='/post/:id' element={<Fullpost />} />
+            <Route path='/' element={<Layout />}>
+              <Route path='/' element={<Home />} />
+              <Route path='/profile' element={<Profile />} />
+              <Route path='/profiletest' element={<Profiletest />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/about' element={<About />} /> 
+              <Route path='/post/:id' element={<Fullpost />} />
+              <Route path='/not-found' element={<NotFound />} />
+              <Route path='*' element={<Navigate to="/not-found" />} />
+            </Route>
           </Routes>
 
         </div>
-
-        <footer className='mt-auto'>
-        <Navbar bg='light' expand="lg" style={{margin: '20px 0 0 0', padding: '0 1.5rem', height: '75px'}}>
-            <div className='container'>
-                <Navbar.Brand href="#home" style={{fontSize: '1.2rem'}}>REACT BLOG 2023</Navbar.Brand>
-                <Navbar>
-                    <Navbar.Text>by Alexey Sedov</Navbar.Text>
-                </Navbar>
-            </div>
-        </Navbar>
-
-        <div style={{textAlign: 'center', padding: '3px', backgroundColor: 'rgba(0, 0, 0, 0.02)' }}> 
-             &copy; {new Date().getFullYear()} All right reserved:{' '}
-            <a href="/">LEXXS</a>
-        </div>
-        </footer>
         
+           <Footer />
 
         {showButton && (
         <div onClick={scrollToTop} className="upclick">&#9650;</div>

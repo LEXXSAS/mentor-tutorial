@@ -14,7 +14,8 @@ html {
 
 body {
     background-color: rgba(0, 0, 0, 0.05);
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin: 50px 10%;
     scroll-behavior: smooth;
     
     /* padding-top: 30px; */
@@ -22,7 +23,9 @@ body {
     /* font-family: 'Roboto'; */
 }
 
-
+.css-wb57ya-MuiFormControl-root-MuiTextField-root, .css-sghohy-MuiButtonBase-root-MuiButton-root {
+    margin: 0 15px !important;
+}
 
 img {
     max-width: 100%;
@@ -48,6 +51,15 @@ img {
     background-color: #fff;
     padding: 30px;
     /* position: relative; */
+}
+
+.full-login {
+    background-color: #fff;
+    padding: 30px;
+    width: 420px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 2rem;
 }
 
 /* .paragraph {
@@ -121,5 +133,35 @@ a:hover {
 @media (min-width: 1024px) {
     .upclick {
         right: 50px;
+    }
+}
+
+@media (max-width: 450px) {
+    .header {
+        display: flex;
+    padding: 15px 0;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-between;
+    }
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        /* padding-right: calc(var(--bs-gutter-x) * .5); */
+        /* padding-left: calc(var(--bs-gutter-x) * .5); */
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .full-login {
+        background-color: #fff;
+        padding: 30px;
+        width: 350px;
+        border-radius: 10px;
+        margin: 0 auto;
+        margin-top: 2rem;
     }
 }
