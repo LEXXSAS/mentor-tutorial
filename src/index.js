@@ -8,8 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import './tutorial-4-gen-phrases/App.css'
 import './index.css'
 
-
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
 // import './mentorseven/index.css'
 // import './style.css'
 // import App from './App';
@@ -32,8 +32,8 @@ import App from './tutorial-5-ui-form/App'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
+        <HashRouter>
             <App />
-        </BrowserRouter>
+        </HashRouter>
     </React.StrictMode>
 );

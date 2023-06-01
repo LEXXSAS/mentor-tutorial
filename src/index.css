@@ -27,6 +27,16 @@ body {
     margin: 0 15px !important;
 }
 
+.css-zcbmsk-MuiButtonBase-root-MuiButton-root {
+    color: #fff;
+    background-color: #ffaa0d !important;
+    /* background-color: #ff0d0d !important; */
+}
+
+.buttons {
+    justify-content: space-between;
+}
+
 img {
     max-width: 100%;
     /* position: absolute;
