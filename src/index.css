@@ -23,18 +23,32 @@ body {
     /* font-family: 'Roboto'; */
 }
 
-.css-wb57ya-MuiFormControl-root-MuiTextField-root, .css-sghohy-MuiButtonBase-root-MuiButton-root {
+/* .css-wb57ya-MuiFormControl-root-MuiTextField-root, .css-sghohy-MuiButtonBase-root-MuiButton-root {
     margin: 0 15px !important;
-}
+} */
 
-.css-zcbmsk-MuiButtonBase-root-MuiButton-root {
+/* .css-zcbmsk-MuiButtonBase-root-MuiButton-root {
     color: #fff;
     background-color: #ffaa0d !important;
-    /* background-color: #ff0d0d !important; */
+} */
+
+.btns {
+    display: flex;
+    padding: 0 0;
 }
 
-.buttons {
+/* .buttons {
     justify-content: space-between;
+} */
+
+ul li {
+    list-style-type: none;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
 }
 
 img {
