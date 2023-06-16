@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 // import { Provider } from 'react-redux';
 
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import './tutorial-4-gen-phrases/App.css'
-import './index.css'
+// import './index.css'
+import './mentor-dz-1/style.css'
 
 import { HashRouter } from "react-router-dom";
 // import { BrowserRouter } from "react-router-dom";
@@ -23,7 +24,8 @@ import { HashRouter } from "react-router-dom";
 // import App from './mentortwo/App'
 // import App from './mentorthree/App'
 // import App from './mentorseven/App'
-import App from './tutorial-6-users-from-api/App'
+import App from './mentor-dz-1/App'
+// import App from './tutorial-6-users-from-api/App'
 // import App from './tutorial-5-2-useForm/App'
 // import App from './tutorial-5-ui-form/App'
 // import App from './mentorfour/App'
